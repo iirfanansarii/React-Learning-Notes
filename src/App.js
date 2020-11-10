@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { Component } from "react";
 
@@ -7,19 +6,30 @@ class App extends Component {
     super();
 
     this.state = {
-      String: "Hello Class Component",
+     monsters:[
+       {
+         name:'FrankStein',
+         id:'abc'
+       },
+       {
+         name:'Dracula',
+         id:'bcd'
+       },
+       {
+         name:'Zombie',
+         id:'efg'
+       }
+     ]
     };
   }
-/* below at setState the state is changin so when it happens we render  the components */
+/* map is a mehtod which iterate all those methos inside an array eg:monsters */
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p> {this.state.String}</p>
-<button onClick={()=>this.setState({String:'Hello React Bhai'})}>Change Name</button>
-   <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer"> Learn React </a>
-        </header>
+        {
+          this.state.monsters.map(monster => 
+          <h1 key={monster.id}>{monster.name}</h1>)
+        }
       </div>
     );
   }
