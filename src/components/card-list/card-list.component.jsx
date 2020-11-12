@@ -7,6 +7,7 @@ import './card-list.styles.css';
 *eg:   <CardList name="bakait"> hello  </CardList>  in app.js file here hello is children of props
 */
 
+//passing card-list component and rendering outside of the vid
 export const CardList = props =>{
 return  <div className="card-list">{props.children}</div>;
 }
